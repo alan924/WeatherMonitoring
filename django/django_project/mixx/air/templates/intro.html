@@ -1,0 +1,18 @@
+<!--DOCTYPE html-->
+{% extends "base.html" %}
+{% block title %}INTRO{% endblock %}
+{% block content %}
+{% load staticfiles %}
+<div id="intro">
+<a href="/">
+<img class="introimg" src='{% static "image/LogoBlack_Small.png" %}' title="MixtureQ" alt="MixtureQ_Logo" />
+</a>
+<p id="introtxt">我們是《MixtureQ感質混合物》，致力於利用跨領域知識將資料轉化成「有感」的生活資訊。<br /><br /><br />
+<span><a href="/future/">
+<img class="introimg" src='{% static "image/bannerFutureImage07.png" %}' title="Future Image" alt="Future Image"></a></span><br /><br />
+我們第一個測試品是《Future Image》，使用人工智慧預測一個地點未來45~48小時內的影像。<br />
+我們希望將影像運用到生活中不同的面向，例如天氣、旅遊。<br />
+歡迎您隨時和我們聊聊各種感覺和想法，我們需要您的回饋，感謝您。<br /><br /></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YK7dtfu5hCM" frameborder="0" allowfullscreen></iframe>
+</div>
+{% endblock %}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% static "" as qqq %}
+<head>
+	<meta charset="utf-8">
+	<title>影像預報所Future Image|全台灣72個地點的影像預測網站</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="結合天氣資料與公開影運算出的的影像預報工具，讓你看見未來的樣子，提早規畫旅遊、攝影、婚紗等行程。">
+	<meta name="author" content="Fenix Shih">
+	<meta name="keywords" content="Taiwan, Taipei, weather, forecast, future, wedding, photography" />
+	<link href='{% static "css/bootstrap.css" %}' rel="stylesheet">
+	<link href='{% static "css/style.css" %}' rel="stylesheet"> 
+	<script type="text/javascript" src='{% static "js/jquery.min.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/menu.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/jquery.mixitup.min.js" %}'></script> 	
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104747570-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+	
+	<link rel='icon' href='{% static "image/mixtureq.ico" %}' >
+    <link rel='bookmark' href='{% static "image/mixtureq.ico" %}' >
+    <link rel='shortcut icon' href='{% static "image/mixtureq.ico" %}' >
+</head>
+
+
+<body>
+
+<div class="container">
+	<header class="big">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#"><img src='{% static "image/bannerLogo_Black.png" %}'></a>
+						</div>
+					
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="active">
+									<a href="#">地點選單</a>
+								</li>																
+								
+								<li>
+									<a href="https://www.facebook.com/MixtureQ" target="_blank">Facebook</a>
+								</li>
+								
+								<li>
+									<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#HowModal" style="margin:4px 0 10px 0; padding=0px; background:#DE6A10; border:none;">使用說明</button>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+				</nav>			
+			</div>
+		</div>
+	</header>
+	
+<!-- Modal -->	
+<div class="modal fade" id="HowModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">如何使用影像預報？</h4>
+      </div>
+      <div class="modal-body">
+        <p>你是需要出外景的攝影師嗎？<br>曾經被多變的天氣困擾嗎？<br>
+        我們可以幫你預測出未來48小時內的「影像」，讓你可以提前安排或改變行程，減少拍攝成本的浪費，提高工作效率！<br><br>
+        你知道嗎？以下照片在氣象預報中都被預報為晴天，但很明顯的大多都不是我們認為的晴天。<br>
+        <img src='{% static "image/how.jpg" %}' alt="如何使用影像預報所" style="width:100%;"><br>
+        透過資料科學的運算，我們可以告訴你拍攝地點到底長什麼樣子！<br><br>
+        在選單中選擇與即將前往的拍攝地點相近的地名，裡面會告訴你攝影機位置、即時影像以及我們預測出來的照片。<br>
+        無論是安排行程、更改行程或是臨時前往拍攝，影像預報所都是你最佳的參考資料。</p><br>
+		<a href="https://drive.google.com/file/d/0B73w_LaHaLV4NmdiWTJqYXQ4dmM/view">預測結果</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<section class="stretch" style="margin-top:22px;">
+				
+<div id="mix">
+    <ul id="filter-list" class="clearfix">
+	  
+      <li class="filter" data-filter="1">北部</li>
+	  <li class="filter" data-filter="2">中部</li>
+      <li class="filter" data-filter="3">南部</li>
+	  <li class="filter" data-filter="4">東部</li>
+	  <li class="filter" data-filter="5">外島</li>
+	  <li style="cursor:default; background:transparent">(共72個地點)</li>
+    </ul>
+
+    <ul id="portfolio">
+	
+	{% for c in cities %}
+		<li class="item {{c.region_id}}">
+			<a href='/local/{{ c.english_name }}'>
+				<img class="img-rounded" src='{{qqq}}image/realtime/{{c.cityid}}'>
+				<h1>{{c.chinese_name}}</h1>
+			</a>
+				<h2>{{c.english_name}}</h2>
+		</li>
+	{% endfor %}			
+    </ul>
+</div>
+	
+</section>		
+		
+<script type="text/javascript">
+$(function(){
+  $('#portfolio').mixitup({
+    targetSelector: '.item',
+    transitionSpeed: 450
+  });
+});
+</script>
+		
+</div>
+</body>
+
+<footer>
+	<div class="footer">
+		c 2017 MixtureQ. All rights reserved.
+	</div>
+</footer>
+
+</html>

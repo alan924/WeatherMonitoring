@@ -1,0 +1,10 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT mixx.wsgi
+
+beta_settings:
+    cloud_sql_instances: coolanteater-5f69b:asia-east1:aardvark02
+
+runtime_config:
+  python_version: 3
+

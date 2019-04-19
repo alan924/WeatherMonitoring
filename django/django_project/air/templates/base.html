@@ -1,0 +1,26 @@
+﻿<!-- base.html (air project) -->
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- made by wj CSS -->
+<link rel="stylesheet" type="text/css" href='{% static "css/0811.css" %}' />
+<link rel='icon' href='{% static "image/mixtureq.ico" %}' >
+<link rel='bookmark' href='{% static "image/mixtureq.ico" %}' >
+<link rel='shortcut icon' href='{% static "image/mixtureq.ico" %}' >
+
+<style>
+h1, h2, h3, h4, h5, p, div {
+    font-family: 微軟正黑體;
+}
+</style>
+</head>
+<body>
+{% include "header.html" %}
+{% block content %}{% endblock %}
+
+</body>
+</html>

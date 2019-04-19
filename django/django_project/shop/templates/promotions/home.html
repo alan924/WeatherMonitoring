@@ -1,0 +1,68 @@
+{% extends "layout_2_col.html" %}
+{% load i18n %}
+
+{% block navigation %}
+    {% include "partials/nav_primary.html" with expand_dropdown=1 %}
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block column_left %}
+<table>
+    <tr>
+        <td>
+            <div class='panel panel-warning'>
+                <div class='panel panel-heading'>
+                    <h3>最新消息</h3>
+                </div>
+                <div class='panel panel-body'>
+                    <p>
+                        歡慶開學，即日起凡在本店購書滿100元以上，即免運費。
+                    </p>
+                </div>
+                <div class='panel panel-footer'>
+                    <em>截止日：2016/12/31</em>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class='panel panel-info'>
+                <div class='panel panel-heading'>
+                    <h3>本店地址</h3>
+                </div>
+                <div class='panel panel-body'>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.492640658839!2d120.34805411501405!3d22.635413785150387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e1b319d8b9d47%3A0x904f4108ed16fc38!2z5by15aeQ6J2m5LuB5rC06aSD54mb6IKJ6bq1!5e0!3m2!1szh-TW!2stw!4v1472545810920" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class='panel panel-footer'>
+                    <em>電話：07-749-xxxx</em>
+                </div>
+            </div>
+
+        </td>
+    </tr>
+</table>
+{% endblock %}
+
+{% block content %}
+<div class='panel panel-primary'>
+    <div class='panel panel-heading'>
+        <h1>歡迎光臨【我的小店】</h1>
+    </div>
+    <div class='panel panel-body'>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hgIfZz8STLk" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class='panel panel-footer'>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- photo.madoupt.com -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9059544252653595"
+     data-ad-slot="9433375637"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</div>
+{% endblock content %}

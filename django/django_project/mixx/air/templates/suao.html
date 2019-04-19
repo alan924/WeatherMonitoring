@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}MixtureQ{{thecity.chinese_name}}{% endblock %}
+{% block content %}
+{% load static %}
+{% static "" as base_url %}
+
+<script type="text/javascript" language="JavaScript">
+        function MM_openBrWindow(theURL, winName, features) { //v2.0
+            window.open(theURL, winName, features);
+        }
+	function ShowTelling() {
+    document.getElementById("telling").style="display:block;";
+    document.getElementById("OnOff").onclick="OffTelling();";
+}
+
+    function MenuFunction (AreaNumber) {
+    var AreaID = "Area"+AreaNumber;
+    var AreaIndex= AreaNumber - 1;
+    document.getElementById("Area1").style="font-weight:normal";
+    document.getElementById("Area2").style="font-weight:normal";
+    document.getElementById("Area3").style="font-weight:normal";
+    document.getElementById("Area4").style="font-weight:normal";
+    document.getElementById("Area5").style="font-weight:normal";
+    document.getElementById(AreaID).style="font-weight:bold";
+	AreaJSON = "";
+    {% for ci in cities %}
+	    if ({{ci.region_id}} == AreaNumber ){
+        AreaJSON += 
+	"<div class='place'><a class='placetxt' href='/local/{{ ci.region_id }}/{{ ci.english_name }}'>"+
+    "<img class='placeimg' src='{{base_url}}image/realtime/{{ci.cityid}}'/>{{ci.chinese_name}}<br>{{ci.english_name}}</a></div>";
+        }
+	{% endfor %}	
+    document.getElementById("locations").innerHTML = AreaJSON;
+}
+</script>
+
+<div id="location_info">
+<p id= "info1" class="info">{{thecity.chinese_name}}</p>
+<div id="info2" class="info">
+<p class="textinfo2">
+{{thecity.intro}}</p><br>
+<a id="whref" class="textinfo2" href="{{thecity.url}}" target="_blank">
+氣象連結
+</a>
+</div>
+</div>
+<div id="NewUX">
+<div id="NewRT" class="PhotoBlock">即時影像
+<img id="newRTphoto" src="{{base_url}}image/realtime/{{thecity.cityid}}00" />
+</div>
+<div id="NewFI" class="PhotoBlock">
+影像預報<br>
+{% for hour in aaa %}
+    <img class="newFphoto" src="{{base_url}}image/forecast/{{thecity.cityid}}{{ hour }}" />
+{% endfor %}
+</div>
+
+</div>
+<div id="tellus">
+<a id="OnOff" href="https://goo.gl/forms/D07IjAO6XyJaTdY72" title="謝謝～" target="_blank">請告訴我們你的想法</a>
+</div>
+
+
+<div id="areaSelect">
+<h2>看看其他地點</h2>
+<div id="Area1" class="area" onclick="MenuFunction(1);">北部</div>
+<div id="Area2" class="area" onclick="MenuFunction(2);">中部</div>
+<div id="Area3" class="area" onclick="MenuFunction(3);">南部</div>
+<div id="Area4" class="area" onclick="MenuFunction(4);">東部</div>
+<div id="Area5" class="area" onclick="MenuFunction(5);">外島</div>
+</div>
+<div id="locations"></div><br><br><br><br><br>
+
+{% endblock %}

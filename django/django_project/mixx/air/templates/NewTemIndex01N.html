@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}MixtureQ{% endblock %}
+{% block content %}
+{% load static %}
+{% static "" as qqq %}
+<script type="text/javascript" language="JavaScript">
+function MenuFunction (AreaNumber) {
+    var AreaID = "Area"+AreaNumber;
+    var AreaIndex= AreaNumber - 1;
+    document.getElementById("Area1").style="font-weight:normal";
+    document.getElementById("Area2").style="font-weight:normal";
+    document.getElementById("Area3").style="font-weight:normal";
+    document.getElementById("Area4").style="font-weight:normal";
+    document.getElementById("Area5").style="font-weight:normal";
+    document.getElementById(AreaID).style="font-weight:bold";
+	AreaJSON = ""
+    {% for ci in cities %}
+	    if ({{ci.region_id}} == AreaNumber ){
+        AreaJSON += 
+	"<div class='place'><a class='placetxt' href='/local/{{ ci.region_id }}/{{ ci.english_name }}'>"+
+    "<img class='placeimg' src='{{qqq}}image/realtime/{{ci.cityid}}'/>{{ci.chinese_name}}<br>{{ci.english_name}}</a></div>";
+        }
+	{% endfor %}	
+    document.getElementById("locations").innerHTML = AreaJSON;
+}
+</script>
+
+<div id="areaSelect">
+<div id="Area1" class="area" onclick="MenuFunction(1);">北部</div>
+<div id="Area2" class="area" onclick="MenuFunction(2);">中部</div>
+<div id="Area3" class="area" onclick="MenuFunction(3);">南部</div>
+<div id="Area4" class="area" onclick="MenuFunction(4);">東部</div>
+<div id="Area5" class="area" onclick="MenuFunction(5);">外島</div>
+</div>
+<div id="locations">
+</div><br><br><br><br><br>
+<script>
+var AreaJSON="";
+{% for ci in cities %}
+	if ({{ci.region_id}} == 1 ){
+        AreaJSON += 
+	"<div class='place'><a class='placetxt' href='/local/{{ ci.region_id }}/{{ ci.english_name }}'>"+
+    "<img class='placeimg' src='{{qqq}}image/realtime/{{ci.cityid}}'/>{{ci.chinese_name}}<br>{{ci.english_name}}</a></div>";
+        }
+{% endfor %}
+document.getElementById("locations").innerHTML = AreaJSON;
+document.getElementById("Area1").style = "font-weight:bold";
+</script>
+<!--
+<div id="areaSelect">
+{%for r in rr%}    
+	{% if r.id == region.id %}
+	    <a href="/future/{{r.id}}"><p class="area" style="font-weight:bold" >{{r}}</p></a>
+	{% else %}
+	    <a href="/future/{{r.id}}"><p class="area" >{{r}}</p></a>
+	{% endif %}		
+{%endfor%}
+</div>
+<div id="locations">
+{%for c in region.city_set.all|dictsort:"id" %}
+    <div class="place"><a class="placetxt" href="/local/{{ region.id }}/{{ c.english_name }}" >
+    <img class="placeimg" src="{{qqq}}image/realtime/{{c.cityid}}">{{c.chinese_name}}<br>{{c.english_name}}<br></a>
+	</div>
+{%endfor%}
+</div>
+-->
+{% endblock %}
+

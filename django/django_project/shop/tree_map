@@ -1,0 +1,303 @@
+templates
+├── 403.html
+├── 404.html
+├── 500.html
+├── base.html
+├── basket
+│   ├── basket.html
+│   ├── messages
+│   │   ├── addition.html
+│   │   ├── line_restored.html
+│   │   ├── line_saved.html
+│   │   ├── new_total.html
+│   │   ├── offer_gained.html
+│   │   └── offer_lost.html
+│   └── partials
+│       ├── basket_content.html
+│       ├── basket_quick.html
+│       └── basket_totals.html
+├── basket_bak
+│   └── partials
+│       └── basket_content.html
+├── catalogue
+│   ├── browse.html
+│   ├── category.html
+│   ├── detail.html
+│   ├── partials
+│   │   ├── add_to_basket_form_compact.html
+│   │   ├── add_to_basket_form.html
+│   │   ├── add_to_wishlist.html
+│   │   ├── gallery.html
+│   │   ├── product.html
+│   │   ├── review.html
+│   │   └── stock_record.html
+│   └── reviews
+│       ├── partials
+│       │   └── review_stars.html
+│       ├── review_detail.html
+│       ├── review_form.html
+│       ├── review_list.html
+│       └── review_product.html
+├── checkout
+│   ├── checkout.html
+│   ├── gateway.html
+│   ├── layout.html
+│   ├── nav.html
+│   ├── payment_details.html
+│   ├── preview.html
+│   ├── shipping_address.html
+│   ├── shipping_methods.html
+│   ├── thank_you.html
+│   ├── user_address_delete.html
+│   └── user_address_form.html
+├── customer
+│   ├── address
+│   │   ├── address_delete.html
+│   │   ├── address_form.html
+│   │   └── address_list.html
+│   ├── alerts
+│   │   ├── alert_list.html
+│   │   ├── emails
+│   │   │   ├── alert_body.txt
+│   │   │   ├── alert_subject.txt
+│   │   │   ├── confirmation_body.txt
+│   │   │   └── confirmation_subject.txt
+│   │   ├── form.html
+│   │   └── message.html
+│   ├── anon_order.html
+│   ├── baseaccountpage.html
+│   ├── email
+│   │   ├── email_detail.html
+│   │   └── email_list.html
+│   ├── emails
+│   │   ├── base.html
+│   │   ├── base.txt
+│   │   ├── commtype_email_changed_body.html
+│   │   ├── commtype_email_changed_body.txt
+│   │   ├── commtype_email_changed_subject.txt
+│   │   ├── commtype_order_placed_body.html
+│   │   ├── commtype_order_placed_body.txt
+│   │   ├── commtype_order_placed_subject.txt
+│   │   ├── commtype_password_changed_body.html
+│   │   ├── commtype_password_changed_body.txt
+│   │   ├── commtype_password_changed_subject.txt
+│   │   ├── commtype_password_reset_body.html
+│   │   ├── commtype_password_reset_body.txt
+│   │   ├── commtype_password_reset_subject.txt
+│   │   ├── commtype_registration_body.html
+│   │   ├── commtype_registration_body.txt
+│   │   ├── commtype_registration_sms.txt
+│   │   └── commtype_registration_subject.txt
+│   ├── history
+│   │   └── recently_viewed_products.html
+│   ├── login_registration.html
+│   ├── notifications
+│   │   ├── detail.html
+│   │   └── list.html
+│   ├── order
+│   │   ├── order_detail.html
+│   │   └── order_list.html
+│   ├── partials
+│   │   └── nav_account.html
+│   ├── profile
+│   │   ├── change_password_form.html
+│   │   ├── profile_delete.html
+│   │   ├── profile_form.html
+│   │   └── profile.html
+│   ├── registration.html
+│   └── wishlists
+│       ├── wishlists_delete.html
+│       ├── wishlists_delete_product.html
+│       ├── wishlists_detail.html
+│       ├── wishlists_form.html
+│       └── wishlists_list.html
+├── dashboard
+│   ├── base.html
+│   ├── catalogue
+│   │   ├── category_delete.html
+│   │   ├── category_form.html
+│   │   ├── category_list.html
+│   │   ├── category_row_actions.html
+│   │   ├── messages
+│   │   │   └── product_saved.html
+│   │   ├── product_class_delete.html
+│   │   ├── product_class_form.html
+│   │   ├── product_class_list.html
+│   │   ├── product_delete.html
+│   │   ├── product_list.html
+│   │   ├── product_row_actions.html
+│   │   ├── product_row_image.html
+│   │   ├── product_row_stockrecords.html
+│   │   ├── product_row_title.html
+│   │   ├── product_row_variants.html
+│   │   ├── product_update.html
+│   │   └── stockalert_list.html
+│   ├── comms
+│   │   ├── detail.html
+│   │   └── list.html
+│   ├── index.html
+│   ├── layout.html
+│   ├── login.html
+│   ├── offers
+│   │   ├── benefit_form.html
+│   │   ├── condition_form.html
+│   │   ├── metadata_form.html
+│   │   ├── offer_delete.html
+│   │   ├── offer_detail.html
+│   │   ├── offer_list.html
+│   │   ├── progress.html
+│   │   ├── restrictions_form.html
+│   │   ├── step_form.html
+│   │   └── summary.html
+│   ├── orders
+│   │   ├── line_detail.html
+│   │   ├── order_detail.html
+│   │   ├── order_list.html
+│   │   ├── partials
+│   │   │   └── bulk_edit_form.html
+│   │   ├── shippingaddress_form.html
+│   │   └── statistics.html
+│   ├── pages
+│   │   ├── delete.html
+│   │   ├── index.html
+│   │   ├── messages
+│   │   │   └── saved.html
+│   │   └── update.html
+│   ├── partials
+│   │   ├── alert_messages.html
+│   │   ├── form_field.html
+│   │   ├── form_fields.html
+│   │   ├── form_fields_inline.html
+│   │   ├── form.html
+│   │   ├── pagination.html
+│   │   ├── product_images.html
+│   │   └── stock_info.html
+│   ├── partners
+│   │   ├── messages
+│   │   │   └── user_unlinked.html
+│   │   ├── partner_delete.html
+│   │   ├── partner_form.html
+│   │   ├── partner_list.html
+│   │   ├── partner_manage.html
+│   │   ├── partner_user_form.html
+│   │   ├── partner_user_list.html
+│   │   └── partner_user_select.html
+│   ├── promotions
+│   │   ├── delete.html
+│   │   ├── delete_pagepromotion.html
+│   │   ├── form.html
+│   │   ├── handpickedproductlist_form.html
+│   │   ├── page_detail.html
+│   │   ├── pagepromotion_list.html
+│   │   └── promotion_list.html
+│   ├── ranges
+│   │   ├── messages
+│   │   │   ├── range_products_saved.html
+│   │   │   └── range_saved.html
+│   │   ├── range_delete.html
+│   │   ├── range_form.html
+│   │   ├── range_list.html
+│   │   └── range_product_list.html
+│   ├── reports
+│   │   ├── index.html
+│   │   └── partials
+│   │       ├── offer_report.html
+│   │       ├── open_basket_report.html
+│   │       ├── order_report.html
+│   │       ├── product_report.html
+│   │       ├── submitted_basket_report.html
+│   │       ├── user_report.html
+│   │       └── voucher_report.html
+│   ├── reviews
+│   │   ├── review_delete.html
+│   │   ├── review_list.html
+│   │   └── review_update.html
+│   ├── shipping
+│   │   ├── messages
+│   │   │   ├── band_created.html
+│   │   │   ├── band_deleted.html
+│   │   │   ├── band_updated.html
+│   │   │   ├── method_created.html
+│   │   │   ├── method_deleted.html
+│   │   │   └── method_updated.html
+│   │   ├── weight_band_delete.html
+│   │   ├── weight_band_form.html
+│   │   ├── weight_based_delete.html
+│   │   ├── weight_based_detail.html
+│   │   ├── weight_based_form.html
+│   │   └── weight_based_list.html
+│   ├── table.html
+│   ├── users
+│   │   ├── alerts
+│   │   │   ├── delete.html
+│   │   │   ├── list.html
+│   │   │   ├── partials
+│   │   │   │   └── alert.html
+│   │   │   └── update.html
+│   │   ├── detail.html
+│   │   ├── index.html
+│   │   ├── table.html
+│   │   ├── user_row_actions.html
+│   │   └── user_row_checkbox.html
+│   └── vouchers
+│       ├── voucher_delete.html
+│       ├── voucher_detail.html
+│       ├── voucher_form.html
+│       └── voucher_list.html
+├── error.html
+├── flatpages
+│   └── default.html
+├── layout_2_col.html
+├── layout_3_col.html
+├── layout.html
+├── login_forbidden.html
+├── offer
+│   ├── detail.html
+│   ├── list.html
+│   └── range.html
+├── partials
+│   ├── alert_messages.html
+│   ├── brand.html
+│   ├── ellipses_pagination.html
+│   ├── extrascripts.html
+│   ├── footer_checkout.html
+│   ├── footer.html
+│   ├── form_field.html
+│   ├── form_fields.html
+│   ├── form_fields_inline.html
+│   ├── form.html
+│   ├── google_analytics.html
+│   ├── google_analytics_transaction.html
+│   ├── image_input_widget.html
+│   ├── mini_basket.html
+│   ├── nav_accounts.html
+│   ├── nav_checkout.html
+│   ├── nav_primary.html
+│   ├── pagination.html
+│   └── search.html
+├── promotions
+│   ├── automaticproductlist.html
+│   ├── baseproductlist.html
+│   ├── default.html
+│   ├── handpickedproductlist.html
+│   ├── home.html
+│   ├── image.html
+│   ├── multiimage.html
+│   ├── rawhtml.html
+│   └── singleproduct.html
+├── README.rst
+├── registration
+│   ├── password_reset_complete.html
+│   ├── password_reset_confirm.html
+│   ├── password_reset_done.html
+│   └── password_reset_form.html
+└── search
+    ├── indexes
+    │   └── product
+    │       └── item_text.txt
+    ├── partials
+    │   ├── facet.html
+    │   └── pagination.html
+    └── results.html
+
+55 directories, 245 files

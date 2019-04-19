@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "" as base_url %}
+<head>
+  <meta charset="UTF-8" />
+  <title>影像預報所Future Image|全台灣72個地點的影像預測網站</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="結合天氣資料與公開影運算出的的影像預報工具，讓你看見未來的樣子，提早規畫旅遊、攝影、婚紗等行程。">
+  <meta name="author" content="Fenix Shih">
+  <meta name="keywords" content="Taiwan, Taipei, Tainan, weather, forecast, future, wedding, photography, travel" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='{% static "css/style.css" %}' rel="stylesheet"> 
+  <script type="text/javascript" src='{% static "js/jquery.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "js/menu.js" %}'></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104747570-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+  
+  <link rel='icon' href='{% static "image/mixtureq.ico" %}' >
+  <link rel='bookmark' href='{% static "image/mixtureq.ico" %}' >
+  <link rel='shortcut icon' href='{% static "image/mixtureq.ico" %}' >
+  <style>
+  .locations {display:inline-block;} 
+  .carousel-control.left {background-image: none;} 
+  .carousel-control.right {background-image: none;} 
+  .info {display:inline-block; vertical-align:top; margin:0 10px 0 10px;}
+  
+  /*for slide show*/
+  * {box-sizing:border-box}
+  /* Slideshow container */
+  .slideshow-container {
+    width:330px;
+    position: relative;
+    margin: auto;
+  }
+  .mySlides {
+    display: none;
+    text-align:center;
+  }
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  /* The dots/bullets/indicators */
+  #dotss {
+    position:relative;
+    top:5px;
+  }
+  .dot {
+    cursor:pointer;
+    height: 9px;
+    width: 9px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  /* Fading animation */
+  .fadd {
+    -webkit-animation-name: fadd;
+    -webkit-animation-duration: 1.2s;
+    animation-name: fadd;
+    animation-duration: 1.2s;
+  }
+  @-webkit-keyframes fadd {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  @keyframes fadd {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  </style>
+</head>
+<body>
+
+	<header class="big">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#"><img src='{% static "image/bannerLogo_Black.png" %}'></a>
+						</div>
+					
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a href="/">地點選單</a>
+								</li>																
+								
+								<li>
+									<a href="https://www.facebook.com/MixtureQ" target="_blank">Facebook</a>
+								</li>
+								
+								<li>
+									<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#HowModal" style="margin:4px 0 10px 0; padding=0px; background:#DE6A10; border:none;">使用說明</button>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+				</nav>			
+			</div>
+		</div>
+	</header>
+
+<!-- Modal -->
+<div class="modal fade" id="HowModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">如何使用影像預報？</h4>
+      </div>
+      <div class="modal-body">
+        <p>你是需要出外景的攝影師嗎？<br>曾經被多變的天氣困擾嗎？<br>
+        我們可以幫你預測出未來48小時內的「影像」，讓你可以提前安排或改變行程，減少拍攝成本的浪費，提高工作效率！<br><br>
+        你知道嗎？以下照片在氣象預報中都被預報為晴天，但很明顯的大多都不是我們認為的晴天。<br>
+        <img src='{% static "image/how.jpg" %}' alt="如何使用影像預報所" style="width:100%;"><br>
+        透過資料科學的運算，我們可以告訴你拍攝地點到底長什麼樣子！<br><br>
+        在選單中選擇與即將前往的拍攝地點相近的地名，裡面會告訴你攝影機位置、即時影像以及我們預測出來的照片。<br>
+        無論是安排行程、更改行程或是臨時前往拍攝，影像預報所都是你最佳的參考資料。</p><br>
+		<a href="https://drive.google.com/file/d/0B73w_LaHaLV4NmdiWTJqYXQ4dmM/view">預測結果</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br>
+<div class="container" style="text-align:center;">
+    <div id="portnav">
+		<a  href="/">其他地點</a>							
+		{% if thecity.id == 1 %}
+		<a class="disabled" href="#">Previous</a>
+		{%else%}
+		<a href="/local/{{prevcity.english_name}}">Previous({{prevcity.chinese_name}})</a>
+		{% endif %}
+		{% if thecity.id == 72 %}
+		<a class="disabled" href="#">Next</a>
+		{%else%}
+		<a href="/local/{{nextcity.english_name}}">Next({{nextcity.chinese_name}})</a>
+		{% endif %}
+				
+	</div>
+</div>
+<br><br>
+<div class="container">
+  <div class="panel panel-default" style="border: 1px solid #d6d6d6;;">
+    <div class="panel-body bg-info" style="border-radius:5px; background-color: #f4f4f4"><h1 class="info">{{thecity.chinese_name}}</h1>
+    <div class="info">
+    <p>{{thecity.intro}}</p>
+    <a href="{{thecity.url}}" target="_blank">氣象連結</a></div></div>
+  </div>
+</div>
+<br><br>
+<div class="container" style="text-align:center;">
+<div id="map" class="col-md-4 thumbnail" style="text-align:center; margin:25px 0px 25px 0px; padding:0 0 44px 0;"><h4>攝影機位置</h4><img src="{{base_url}}image/Maps/{{thecity.cityid}}_map.jpg" style="margin-top:50px; width:330px;"></div>
+<div id="RealTime" class="col-md-4 thumbnail" style="text-align:center; margin:25px 0px 25px 0px; padding:0 0 44px 0;"><h4>即時影像<br>(每半小時更新一次)</h4><img src="{{base_url}}image/realtime/{{thecity.cityid}}00" style="margin-top:31px; width:330px;"></div>
+<div id="Future" class="col-md-4 thumbnail" style="text-align:center; margin:25px 0px 25px 0px;">
+<div style="width:330px; height:326px; margin:auto;">
+  <h4>影像預報</h4>
+  <div class="slideshow-container">
+    {% for hour in aaa %}
+    <div class="mySlides fadd">
+      <img src="{{base_url}}image/forecast/{{thecity.cityid}}{{ hour }}" style="width:330px;">
+    </div>
+	{% endfor %}
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div id="dotss" style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+    <span class="dot" onclick="currentSlide(5)"></span> 
+    <span class="dot" onclick="currentSlide(6)"></span> 
+    <span class="dot" onclick="currentSlide(7)"></span> 
+    <span class="dot" onclick="currentSlide(8)"></span> 
+  </div>
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  function plusSlides(n) {showSlides(slideIndex += n);}
+  function currentSlide(n) {showSlides(slideIndex = n);}
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {slides[i].style.display = "none";}
+    for (i = 0; i < dots.length; i++) {dots[i].className = dots[i].className.replace(" active", "");}
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+   
+  
+</div>
+</div>
+</div>
+
+<br><br><br>
+
+<footer>
+	<div class="footer" style="padding:-10px;">
+		<a href="https://goo.gl/forms/Lr9OloHeZLhGXbMH3" title="謝謝～" target="_blank"><h3>請告訴我們你的想法</h3></a>
+		<p>c 2017 MixtureQ. All rights reserved.	</p>	
+	</div>
+</footer>
+</body>
+</html>

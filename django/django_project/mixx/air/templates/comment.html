@@ -1,0 +1,46 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block title %}FUTURE IMAGE COMMENT{% endblock %}
+{% block content %}
+{% load static %}
+    <div style="position:relative; margin-left:25%;">
+        <h2>請問這個功能有沒有幫到你？
+或是還有什麼要改善的部分？<br>我們需要你的回饋~說說你的想法吧</h2>
+		{% if message %}
+		    {{ message }}
+		{% endif %}
+        {% if r.comment_set.all %}
+            <p>we have {{ r.comment_set.all|length }} comments</p>
+            <table>
+                <tr>
+                    <th>Quest</th>
+                    <th>Date</th>
+                    <th>Comment</th>
+                </tr>
+            {% for c in r.comment_set.all %}
+                <tr>
+                    <td> {{ c.visitor }} </td>
+                    <td> {{ c.date_time | date:"F j, Y" }} </td>
+                    <td> {{ c.content }} </td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+            
+        {% endif %}
+        
+        <br/><br/>
+        {% for e in errors %}
+            <p style="color:red;">{{e}}</p>
+        {% endfor %}
+        
+        <form action="" method="post"> {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table><br>
+        <!--table好看100倍-->
+            <input type="submit" value="送出訊息!">
+         
+        </form>
+    </div>
+{% endblock %}

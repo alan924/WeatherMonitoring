@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    font-family: Blackletter;
+    color:#505050;
+}
+body {
+    background: #F1F3D9; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(168deg,#F1F3D9, #BAEDF2); /* For Safari */
+    background: -o-linear-gradient(168deg,#F1F3D9, #BAEDF2); /* For Opera */
+    background: -moz-linear-gradient(168deg,#F1F3D9, #BAEDF2); /* For Firefox */
+    background: linear-gradient(168deg,#F1F3D9, #BAEDF2); /* Standard syntax (must be last) */
+    background-repeat: no-repeat;
+}
+div#banner {
+    position:relative;
+    width:90%;
+    margin:auto;
+    padding:10px;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+}
+.inBanner {
+    display: inline-block;
+}
+a#FIlogoA {
+    position:relative;
+    margin:7px 15px 7px 15px;
+}
+img#FIlogoImg {
+    position:relative;
+    height:45px;
+}
+div#aboutFI {
+    position:relative;
+    width:65%;
+    margin:7px 15px 7px 15px;
+}
+a#FBlogoA {
+    position:relative;
+    margin:7px 5% 7px 15px;
+}
+div#areaSelect {
+    position:relative;
+    margin:20px auto 20px auto;
+    text-align:center;
+}
+.area {
+    display:inline-block;
+    margin:10px 20px 10px 20px;
+    color:#DE6A10;
+}
+div#location_info {
+    position:relative;
+    top:0px;
+    margin:20px auto 20px auto;
+    width:90%;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+}
+.info {
+    display:inline-block;
+    margin:0px 20px; 0px; 20px;
+}
+#info1 {
+    position:relative;
+    left:20px;
+    top:-16px;
+    font-size:2.5em;
+}
+#info2 {
+    position:relative;
+}
+.textinfo2 {
+    position:relative;
+    display:inline-block;
+    top:4px;
+}
+a#whref {
+    top:-12px;
+}
+a#whref:link {
+    color: blue;
+}
+/* visited link */
+a#whref:visited {
+    color: green;
+}
+/* mouse over link */
+a#whref:hover {
+    color: hotpink;
+}
+/* selected link */
+a#whref:active {
+    color: blue;
+}
+div#weatherArea {
+    position:relative;
+    top:50px;
+    margin:auto;
+    width:96%;
+    /* border:2px dotted grey; */
+    text-align:center;
+}
+div#locations {
+    position:relative;
+    background:rgba(255,255,255,0.45);
+    margin:10px auto 10px auto;
+    width:90%;
+    height:auto;
+    border-radius:15px;
+    text-align:center;
+}
+div.place {
+    position:relative;
+    display: inline-block;
+    width:120px;
+    height:auto;
+    background:transparent;
+    text-align:center;
+    margin:10px 9px;
+}
+img.placeimg {
+    position:relative;
+    width:100px;
+    border-radius: 50%;
+    margin:5px;
+}
+a.placetxt {
+    position:relative;
+    font-size:0.85em;
+    text-decoration: none;
+}
+div#MainPhoto {
+    position:relative;
+    width:100%;
+    text-align:center;
+}
+.PhotoBox {
+    display:inline-block;
+}
+div#RealTime {
+    position:relative;
+    margin:12px;
+    top:0px;
+    padding:10px;
+    height:330px;
+    width:330px;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+    font-size:1.3em;
+}
+img#RTphoto {
+    position:relative;
+    width:310px;
+    top:15px;
+    margin:35px auto 25px auto;
+}
+div#Forecast {
+    position:relative;
+    margin:12px;
+    top:37px;
+    padding:10px;
+    height:330px;
+    width:62%;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+    font-size:1.3em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+div#photoline {
+    position:relative;
+    width:2770px;
+    height:auto;
+    text-align:left;
+}
+img.Fphoto {
+    position:relative;
+    width:310px;
+    margin:15px;
+}
+div#tellus {
+    position relative;
+    margin:20px auto 35px auto;
+    width:90%;
+    text-align:center;
+}
+a#OnOff {
+    position:relative;
+    margin:auto;
+    padding:10px 10px 7px 10px;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+    font-size:1.3em;
+    font-weight:normal;
+    text-decoration:none;
+}
+div#NewUX {
+    position:relative;
+    width:90%;
+    margin:auto;
+    text-align:center;
+}
+.PhotoBlock {
+    display:inline-block;
+}
+div#NewRT {
+    position:relative;
+    margin:20px auto 30px auto;
+    padding:10px 20px 10px 20px;
+    width:350px;
+    font-size:1.3em;
+    text-align:center;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+}
+img#newRTphoto {
+    position:relative;
+    width:310px;
+    margin:15px auto 15px auto;
+}
+div#NewFI {
+    position:relative;
+    padding:10px;
+    font-size:1.3em;
+    text-align:center;
+    background:rgba(255,255,255,0.45);
+    border-radius:15px;
+}
+img.newFphoto {
+    position:relative;
+    width:310px;
+    margin:15px;
+}
+#forMap {
+    position:relative;
+    wifth:100%;
+    margin:auto;
+    text-align:center;
+}
+#ggmap {
+    position:relative;
+    margin:auto;
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    div#aboutFI {
+        position:relative;
+        width:85%;
+        margin:7px 15px 7px 15px;
+    }
+    a#FBlogoA {
+        position:relative;
+        margin-right:5%;
+    }
+    div#NewUX {
+        position:relative;
+        width:98%;
+        margin:auto;
+        text-align:center;
+    }
+    div#NewRT {
+        position:relative;
+        margin:20px auto 30px auto;
+        padding:10px;
+        width:95%;
+        font-size:1.3em;
+        text-align:center;
+        background:rgba(255,255,255,0.45);
+        border-radius:15px;
+    }
+    img#newRTphoto {
+        position:relative;
+        width:90%;
+        margin:15px auto 15px auto;
+    }
+    div#NewFI {
+        position:relative;
+        width:95%;
+        padding:10px;
+        font-size:1.3em;
+        text-align:center;
+        background:rgba(255,255,255,0.45);
+        border-radius:15px;
+    }
+    img.newFphoto {
+        position:relative;
+        width:90%;
+        margin:15px;
+    }
+}
